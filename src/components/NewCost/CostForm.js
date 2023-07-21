@@ -32,6 +32,9 @@ const CostForm = () => {
       amount: inputAmount,
       date: new Date(inputDate),
     };
+    setinputName("");
+    setinputAmount("");
+    setinputDate("");
   };
 
   return (
@@ -39,7 +42,7 @@ const CostForm = () => {
       <div className="new-cost__controls">
         <div className="new-cost__control">
           <label>Название</label>
-          <input type="text" onChange={nameChangeHandler} />
+          <input type="text" value={inputName} onChange={nameChangeHandler} />
         </div>
         <div className="new-cost__control">
           <label>Сумма</label>
@@ -47,6 +50,7 @@ const CostForm = () => {
             type="number"
             min="0.01"
             step="0.01"
+            value={inputAmount}
             onChange={amountChangeHandler}
           />
         </div>
@@ -56,6 +60,7 @@ const CostForm = () => {
             type="date"
             min="2019-01-01"
             step="2022-12-31"
+            value={inputDate}
             onChange={dateChangeHandler}
           />
         </div>
